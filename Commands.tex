@@ -1,0 +1,76 @@
+% ------- Provide Document Basic Information ----------------------
+\newcommand*{\DocTitle}{Template for Software Development Reports}
+\newcommand*{\DocAbstract}{This is a LaTex template that can be used mostly for Software Development related reports. It contains table of contents, revision history, header/footer support, a predefined-setup for `lstlisting' code blocks and inline defined commands for different text-styles (e.g. inline code, references to files, paths, functions etc). Users of this template can easily change components and add new commands. This template's document is also providing information on how the template is organized. The current version is using single-page style which is most ideal for digital documents (and not printable ones). The template has been tested with MikTex2.9 and TexMaker 5.0.2 using `XeLaTex'.}
+\newcommand*{\DocAuthor}{Vasileios Pothos}
+\newcommand*{\RevAuthorA}{VP}
+\newcommand*{\DocCompany}{-}
+% -----------------------------------------------------------------
+
+% ------- Update Default Identation with Labels support -----------
+% \LetLtxMacro{\oldsection}{\section}
+% \renewcommand{\section}[1]{\oldsection{#1} \label{#1}}
+% \LetLtxMacro{\oldsubsection}{\subsection}
+% \renewcommand{\subsection}[1]{\oldsubsection{#1} \label{#1}}
+% \LetLtxMacro{\oldsubsubsection}{\subsubsection}
+% \renewcommand{\subsubsection}[1]{\oldsubsubsection{#1} \label{#1}}
+% \LetLtxMacro{\oldparagraph}{\paragraph}
+% \renewcommand{\paragraph}[1]{\oldparagraph{#1} \label{#1}}
+% \LetLtxMacro{\oldsubparagraph}{\subparagraph}
+% \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1} \label{#1}}
+% -----------------------------------------------------------------
+
+% ------- Fancy Headers and Footers Setup -------------------------
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhf{}
+\lhead{\leftmark}
+\chead{}
+\rhead{}
+\lfoot{\textit{\DocAuthor}}
+\cfoot{\DocCompany}
+\rfoot{p. \thepage \ / \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\fancypagestyle{plain}{%  the preset of fancyhdr 
+    \fancyhf{} % clear all header and footer fields
+		\fancyfoot[R]{p. \thepage \ / \pageref*{LastPage}}
+		%\fancyhead[L]{\leftmark}
+		\fancyfoot[L]{\textit{\DocAuthor}}
+		\fancyfoot[C]{\DocCompany}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{1pt}}
+% -----------------------------------------------------------------
+
+% ------- lstlisting appearance setup -----------------------------
+\lstset{language=sh} % Default lstlisting language set.
+\lstset{frame=tb,
+  language=sh,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\it\color{gray},
+  keywordstyle=\color{DarkBlue},
+  commentstyle=\it\color{DarkGreen},
+  stringstyle=\color{Brown},
+  breaklines=true,
+  breakatwhitespace=false,
+  tabsize=2,
+  frame=single,
+	backgroundcolor=\color{GhostWhite},
+	xleftmargin=1cm,
+	framexleftmargin=0cm,
+	rulecolor=\color{gray}
+}
+% -----------------------------------------------------------------
+
+% ------- User Defined Commands -----------------------------------
+\newcommand*{\rednote}[1]{\textcolor{Red}{\textit{$\blacktriangleright$ #1}}}
+\newcommand*{\codeline}[1]{\textcolor{DarkOrange}{\textbf{\textit{#1}}}}
+\newcommand*{\codemr}[1]{\colorbox{GhostWhite}{\lstinline[keywordstyle=\color{Maroon}, basicstyle=\color{Maroon}]{#1}}}
+\newcommand*{\functionname}[1]{\textit{\lstinline[keywordstyle=\color{DarkCyan}, basicstyle=\color{DarkCyan}]{#1}}}
+\newcommand*{\filename}[1]{\textit{\lstinline[keywordstyle=\color{Brown}, basicstyle=\color{Brown}]{#1}}}
+\newcommand*{\foldername}[1]{\lstinline[keywordstyle=\color{DarkViolet}, basicstyle=\color{DarkViolet}]{#1}}
+% -----------------------------------------------------------------

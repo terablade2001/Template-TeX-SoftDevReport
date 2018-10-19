@@ -1,0 +1,12 @@
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+*.hst
+*.log
+*.log
+*.out
+*.pdf
+*.toc
+*.ver
+*.fls

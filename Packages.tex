@@ -1,0 +1,45 @@
+\usepackage[left=1.5cm, top=1.5cm, right=1.5cm, bottom=1.5cm,includeheadfoot, headheight=15.0pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{abstract}
+\usepackage{amsmath}
+\usepackage[svgnames]{xcolor}
+\usepackage{color}
+\usepackage{hyperref, bookmark}
+\usepackage[tablegrid]{vhistory}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{MnSymbol}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{lastpage}
+\usepackage{letltxmacro}
+\usepackage[abspath]{currfile}
+
+% --------------------------------------------------------------
+% Other Doc. Setup:
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+}
+
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt}
+\setlength{\@fpsep}{0pt}
+\makeatother
+\vbadness=20000
+\hbadness=20000
+\renewcommand{\abstractname}{About}    % clear the title
+\renewcommand{\absnamepos}{center} % originally center
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{}{0pt}{\Huge}
+\titlespacing*{\chapter} {0pt}{0pt}{40pt}
+
+% ------------------------------------------------------------

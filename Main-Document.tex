@@ -1,0 +1,70 @@
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Software Development / Technical / Research, Single Page Report
+% LaTeX Template
+% Version 1.9 (19 October 2018)
+%
+% Original author:
+% Vasileios Kon. Pothos 
+% 
+% https://github.com/terablade2001/Template-TeX-SoftDevReport
+%
+% License:
+% MIT 2018 Vasileios Kon. Pothos
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper, 12pt]{report}
+\input{Packages.tex}
+\input{Commands.tex}
+
+\pagestyle{fancy}
+\begin{document}
+% ------------------------------------------------------------
+% Report Information
+\title{\textbf{\DocTitle}}
+\author{\textit{\DocAuthor}}
+\date{\today}
+% ------------------------------------------------------------
+
+
+\sloppy
+\noindent
+\begin{minipage}[t][][c]{\textwidth}
+\maketitle
+\hfill \\ \hfill \\ \hfill \\
+\hfill \\ \hfill \\ \hfill \\
+\hfill \\ \hfill \\ \hfill \\
+\hfill \\
+\begin{abstract}
+\textit{\DocAbstract}
+\end{abstract}
+\end{minipage}
+
+\mbox{} \vfill
+\begin{flushleft}
+\scriptsize \LaTeX: \textit{\thepwd}
+\end{flushleft}
+\normalsize
+
+\thispagestyle{empty}
+\newpage
+
+\pdfbookmark{Revision History}{Revision History}
+\begin{versionhistory}
+\input{DocVersions.tex}
+\end{versionhistory}
+\thispagestyle{empty}
+\newpage
+
+\phantomsection
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\renewcommand{\contentsname}{Table of Contents}
+\pdfbookmark{\contentsname}{Table of Contents}
+\tableofcontents{}
+\thispagestyle{empty}
+\newpage
+
+
+\setcounter{page}{1}
+\input{Body.tex}
+
+\end{document}

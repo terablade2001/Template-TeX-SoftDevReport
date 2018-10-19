@@ -1,0 +1,83 @@
+\chapter{About this Template}
+This template was create in order to use LaTex for Software Development reports; meaning reports that are related with any kind of code / scripting interactions.
+\\ \\ %
+\rednote{The \codemr{-recorder} option should be used during \LaTeX compilation, in order to have access to the document's filepaths}.
+
+\section{Template's Files}
+This template consists of the following files:
+\begin{description}
+\item{\textbf{\filename{Main.tex}}} \hfill \\
+This is the \textit{Master Document} of this template. For example in the \textit{TexMaker} software, user can select ``\textit{Options}'' $\blacktriangleright$ ``\textit{Define Current Document as 'Master Document'}'' on this file.
+
+
+
+\item{\textbf{\filename{Packages.tex}}} \hfill \\
+This file include the template's packages files, and some extra settings, i.e. for hyperlinking and other basic display settings.
+
+
+
+\item{\textbf{\filename{Commands.tex}}} \hfill \\
+This file contains most of the defined or renewed commands. It can be divided into the following parts:
+\begin{itemize}
+\item{\textbf{Document Basic Information}}: In this part the user should add the following information: \textit{Title}, \textit{Abstract}, \textit{Author('s)}, \textit{Author('s) short names} for versioning and the \textit{Company/Organization} name.
+\item{\textbf{Modify default sectioning to auto-include labels}}: If this behavior is not wanted, this part can be commented. What it actually does is that provides the ability to use references direction on sections, subsections, etc up to subparagraphs using as label names the titles of the corresponding sections. E.g. using the \codemr{\\ref\{Template's Files\}} code a reference links is created like this: \ref{Template's Files}.
+\item{\textbf{Fancy Header/Footers setup}}: At this point the user can modify at will the Header/Footer, for the normal ``fancy-style'' pages and the ``plain-style'' pages (like e.g. Chapter Pages). In default behaviour the ``plain-style'' pages doesn't include header information.
+\item{\textbf{Lstlisting appearance setup}}: The code-blocks in this document are parsed via the lstlisting package. At this part user can modify how code blocks are displayed. An example of current code-block is provided below in \textit{C} language:
+\lstset{language=c}
+\begin{lstlisting}
+// Just a Hello World application in C - language!
+#include <stdio.h>
+
+int main(int argc, char** argv) {
+	printf("Hello World!\n");
+	return 0;
+}
+\end{lstlisting}
+\item{\textbf{User-Defined Commands}}: At the end, user can use or re/define it's own commands for his report document. Currently the following commands are provided:
+\begin{itemize}
+\item{\codemr{\\rednote\{\}}:\\ \rednote{Denoting something important, an error or whatever.}}
+\item{\codemr{\\codeline\{\}}:\\ At \codeline{Line 4} of the C application the function \textit{main()} is defined.}
+\item{\codemr{\\codemr\{\}}:\\ Provide a code block into the text like \codemr{this is inline code-block}}.
+\item{\codemr{\\functionname\{\}}:\\ Special font to refer to functions like: The function \functionname{main()} consists of the first function that is executed in the simple C example above.}
+\item{\codemr{\\filename\{\}}:\\ Special font to refer to files, like: The \filename{Body.tex} is where users can write their report.}
+\item{\codemr{\\foldername\{\}}:\\ Special font to refer to folder, like: The images are usually placed in the \foldername{./images} folder.}
+\end{itemize}
+At this part the user can define it's own commands for the styles of his document.
+\end{itemize}
+
+
+
+\item{\textbf{\filename{DocVersions.tex}}} \hfill \\
+This file is used for document versioning, which is displayed the second document page with title ``\textit{Revision History}''. For version 1.3 this file contains the following code:
+\lstset{language=TeX}
+\begin{lstlisting}
+\vhEntry{1.0}{04.08.2018}{\RevAuthorA}{Template creation}
+\vhEntry{1.1}{04.08.2018}{\RevAuthorA}{Reorganizing to multiple files for easy of config/edit.}
+\vhEntry{1.2}{04.08.2018}{\RevAuthorA}{Adding fancy header/footers}
+\vhEntry{1.3}{05.08.2018}{\RevAuthorA}{Corrections \& addition of template's information text.}
+\end{lstlisting}
+
+
+
+\item{\textbf{\filename{Body.tex}}} \hfill \\
+This file is the main file where users can start writting their report, starting with the \codemr{\\chapter\{\}} command.
+\end{description}
+
+\newpage
+\section{Folder ``TexRelease''}
+The folder \foldername{TexRelease} is a folder where the created PDF versions can be kept in users' folder without git-tracking. Thus in this folder, for this Template and \textbf{for the version 1.9}, there can be all, or some of, the following PDF files:
+\begin{itemize}
+\setlength\itemsep{0em}
+\item{\filename{Main-Document_v1.0.pdf}}
+\item{\filename{Main-Document_v1.1.pdf}}
+\item{\filename{Main-Document_v1.2.pdf}}
+\item{\filename{Main-Document_v1.3.pdf}}
+\item{\filename{Main-Document_v1.4.pdf}}
+\item{\filename{Main-Document_v1.5.pdf}}
+\item{\filename{Main-Document_v1.6.pdf}}
+\item{\filename{Main-Document_v1.7.pdf}}
+\item{\filename{Main-Document_v1.8.pdf}}
+\item{\filename{Main-Document_v1.9.pdf}}
+\end{itemize}
+
+The idea behind the folder \foldername{TexRelease} is to keep the produced versioned  (\textit{and thus not expected to be change again!}) PDFs in user's disks which may be linked internally (\textit{i.e. bookmark links}) by another software (\textit{e.g. SimpleMind-Pro}\footnote{\href{https://simplemind.eu/}{https://simplemind.eu/}}).
