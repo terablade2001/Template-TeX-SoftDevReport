@@ -51,10 +51,10 @@ At this part the user can define it's own commands for the styles of his documen
 This file is used for document versioning, which is displayed the second document page with title ``\textit{Revision History}''. For version 1.3 this file contains the following code:
 \lstset{language=TeX}
 \begin{lstlisting}
-\vhEntry{1.0}{04.08.2018}{\RevAuthorA}{Template creation}
-\vhEntry{1.1}{04.08.2018}{\RevAuthorA}{Reorganizing to multiple files for easy of config/edit.}
-\vhEntry{1.2}{04.08.2018}{\RevAuthorA}{Adding fancy header/footers}
-\vhEntry{1.3}{05.08.2018}{\RevAuthorA}{Corrections \& addition of template's information text.}
+\vhEntry{1.0}{04 Aug 2018}{\RevAuthorA}{Template creation}
+\vhEntry{1.1}{04 Aug 2018}{\RevAuthorA}{Reorganizing to multiple files for easy of config/edit.}
+\vhEntry{1.2}{04 Aug 2018}{\RevAuthorA}{Adding fancy header/footers}
+\vhEntry{1.3}{05 Aug 2018}{\RevAuthorA}{Corrections \& addition of template's information text.}
 \end{lstlisting}
 
 
@@ -81,3 +81,76 @@ The folder \foldername{TexRelease} is a folder where the created PDF versions ca
 \end{itemize}
 
 The idea behind the folder \foldername{TexRelease} is to keep the produced versioned  (\textit{and thus not expected to be change again!}) PDFs in user's disks which may be linked internally (\textit{i.e. bookmark links}) by another software (\textit{e.g. SimpleMind-Pro}\footnote{\href{https://simplemind.eu/}{https://simplemind.eu/}}).
+
+\newpage
+\section{Tip-scripts}
+Here are some tip-scripts for LaTeX using this template. The below tips are scripts that can be placed at ``User -> User Tags'' quick tags  of TexMaker editor.
+\\ \\ %
+\textbf{1. ToDos} \\
+The following code will produce a yellow and a red todo as shown below.
+\begin{lstlisting}
+\todo[inline,color=yellow]{This is a yellow inline todo comment}
+\todo[inline,color=red]{This is a red inline todo comment}
+\end{lstlisting}
+\todo[inline,color=yellow]{This is a yellow inline todo comment}
+\todo[inline,color=red]{This is a red inline todo comment}
+~\\ \\ %
+\textbf{2. Code Listing} \\
+Modify and use the following snipet for your code listing:
+\lstset{language=tex}
+\begin{lstlisting}
+\lstset{language=c}
+\lstset{basicstyle=\footnotesize\ttfamily}
+\begin{lstlisting}[caption={This is a listing of C code with caption at the top.},captionpos=t,label={lst:listing-of-lst-code}]
+int main(int argc, char** argv) {
+  return 0;
+}
+\ end{lstlisting}
+\end{lstlisting}
+
+The above code will produce the following, with reference label: \textit{lst:listing-of-lst-code}. E.g. reference as: Listing~\ref{lst:listing-of-lst-code}.
+\lstset{language=c}
+\lstset{basicstyle=\footnotesize\ttfamily}
+\begin{lstlisting}[caption={This is a listing of C code with caption at the top.},captionpos=t,label={lst:listing-of-lst-code}]
+int main(int argc, char** argv) {
+  return 0;
+}
+\end{lstlisting}
+~\\ \\ %
+\textbf{3. Itemize} \\
+A script for unordered lists.
+\lstset{language=tex}
+\lstset{basicstyle=\small\ttfamily}
+\begin{lstlisting}
+\begin{itemize}
+\setlength\itemsep{0em}
+\item{}
+\item{}
+\end{itemize}
+\end{lstlisting}
+~\\ \\ %
+\newpage
+\textbf{4. Figure} \\
+A script for figures
+\begin{lstlisting}
+\begin{figure}[hbtp] \centering
+  \includegraphics[width=\textwidth]{Figures/filename.png}
+  \caption{your-caption}
+  \label{fig:filename}
+\end{figure}
+\end{lstlisting}
+~\\ \\ %
+\textbf{5. Multiple figures} \\
+A script for multiple figures at once.
+\begin{lstlisting}
+\begin{figure}[H] \centering
+  \begin{subfigure}[t]{.45\textwidth} \centering
+    \includegraphics[width=\linewidth]{Figures/A.png}
+  \end{subfigure}
+  \begin{subfigure}[t]{.45\textwidth} \centering
+    \includegraphics[width=\linewidth]{Figures/B.png}
+  \end{subfigure}
+\caption{Two figures together}
+\label{fig:A-and-B}
+\end{figure}
+\end{lstlisting}
