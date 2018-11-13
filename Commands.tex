@@ -66,6 +66,12 @@
 }
 % -----------------------------------------------------------------
 
+% ------- User Defined Environments -------------------------------
+\newenvironment{itquote} % Italics quote
+{\noindent\rule{\textwidth}{0.5pt}\begin{quote}\itshape}
+{\end{quote}\noindent\rule{\textwidth}{0.5pt}}
+
+
 % ------- User Defined Commands -----------------------------------
 \newcommand*{\rednote}[1]{\textcolor{Red}{\textit{$\blacktriangleright$ #1}}}
 \newcommand*{\codeline}[1]{\textcolor{DarkOrange}{\textbf{\textit{#1}}}}
