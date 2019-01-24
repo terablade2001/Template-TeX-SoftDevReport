@@ -6,6 +6,15 @@
 \newcommand*{\DocCompany}{-}
 % -----------------------------------------------------------------
 
+% ------- Update Chapters colors and add Labeling based on numbers  
+\titleformat{\chapter}[block]{\rmfamily\Huge\bfseries\color{black}}{\label{HEAD:\thechapter}}{0em}{\Huge}
+\titleformat{\section}[block]{\rmfamily\huge\bfseries\color{DarkBlue}}{\label{HEAD:\thesection}\thesection. }{0em}{\huge}
+\titleformat{\subsection}[block]{\rmfamily\LARGE\bfseries\color{DarkCyan}}{\label{HEAD:\thesubsection}\thesubsection. }{0em}{\LARGE}
+\titleformat{\subsubsection}[block]{\rmfamily\Large\bfseries\color{DarkGreen}}{\label{HEAD:\thesubsubsection}\thesubsubsection. }{0em}{\Large}
+\titleformat{\paragraph}[block]{\rmfamily\large\bfseries\color{DarkOrange}}{\label{HEAD:\theparagraph}\theparagraph. }{0em}{\large}
+\titleformat{\subparagraph}[block]{\rmfamily\large\bfseries\color{DarkViolet}}{\label{HEAD:\thesubpararaph}\thesubpararaph. }{0em}{\large}
+% -----------------------------------------------------------------
+
 % ------- Update Default Identation with Labels support -----------
 \LetLtxMacro{\oldsection}{\section}
 \renewcommand{\section}[1]{\oldsection{#1} \label{#1}}
