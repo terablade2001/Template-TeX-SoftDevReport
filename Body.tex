@@ -161,3 +161,22 @@ A script for multiple figures at once.
 \begin{itquote}
 Using the \codemr{\\begin\{itquote\}} and \codemr{\\end\{itquote\}} commands users can now add italics quotes, bounded by lines horizontal lines.
 \end{itquote}
+
+~\\ \\ %
+\textbf{7. Tables} \\
+\begingroup
+\setlength{\tabcolsep}{8pt} % Default value: 6pt
+\renewcommand{\arraystretch}{1.4} % Default value: 1
+\begin{table}[!htbp]
+  \centering
+  \begin{tabular}[c]{|c|c|c|}
+    \rowcolor[HTML]{DAE8FC}
+    \hline
+    A & B & C \\ \hline
+    B & \multicolumn{2}{c|}{\multirow{2}{*}{D}} \\ \cline{1-1}
+    C & \multicolumn{2}{c|}{} \\ \hline
+  \end{tabular}
+\caption{This is table}
+\label{tab:Table}
+\end{table}
+\endgroup
